@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+   
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .menu-header span {
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .menu-header .activo {
+    color: black;
+    border-bottom: 2px solid red;
+  }
+  
+  .menu-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .modal-info {
+  flex: 1;
+  overflow-y: auto;       /* Activa scroll vertical */
+  width: 100%;
+  max-height: 40vh;       /* Limita la altura visible para activar scroll si se excede */
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-right: 10px;    /* Espacio para que no corte el contenido por la derecha */
+  box-sizing: border-box;
+}
+
+  .platillo {
+    width: 48%;
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column; /* ⬇️ apila imagen y texto */
+    height: 200px; /* puedes ajustar esta altura */
+  }  
+  
+  .platillo:hover {
+    transform: scale(1.03);
+  }
+  
+  .imagen-contenedor {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* 🧱 ocupa el espacio disponible */
+    padding: 10px;
+  }
+  
+  .imagen-contenedor img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .info-platillo {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #bbb;
+    border-radius: 30px;
+    padding: 6px 12px;
+    width: 60%;
+    background-color: #fff;
+    overflow: hidden; /* <-- Esto previene que sobresalga algo */
+    box-sizing: border-box;
+    padding-right: 190px;
+    padding-left: 30px;
+  }
+  .search-box input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex-grow: 1;
+  }
+  
+  .search-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .menu-carrito,
+  .menu-icon {
+    font-size: 24px; /* 👈 Cambia este número a lo que necesites */
+    cursor: pointer;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-contenido {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .modal-imagen img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .modal-info h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .seccion-titulo {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .btn-cerrar {
+    margin-top: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+  }
+  .modal-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .modal-imagen img {
+    width: 90%;
+    border-radius: 12px;
+  }
+  
+  .modal-info {
+    max-height: 400px; /* Ajusta según el tamaño de tu contenido */
+    overflow-y: auto; /* Habilita el desplazamiento vertical si el contenido es muy grande */
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .seccion-titulo {
+    font-weight: bold;
+    margin-top: 16px;
+  }
+  
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .opcion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .opcion input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-left: 12px;
+  }
+  
+  .btn-cerrar {
+    margin-top: 24px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+  .btn-cerrar-agregar {
+    margin-top: 24px;
+    background-color: #e1e73c;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .modal-detalles {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .modal-detalles h2 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  
+  .modal-detalles p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .modal-botones {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .mcpay {
+    color: #ffc107; /* Amarillo */
+  }
+  
+  .together {
+    color: black; /* Negro */
+  }
+
+  
+
+  @media (max-width: 600px) {
+    .platillo {
+      width: 45%;
+    }
+  
+    .menu-header {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  
+    .info-platillo {
+      font-size: 14px;
+    }
+    .header-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+      }
+    
+      
+      .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      .mcpay {
+        color: #ffc107; /* Amarillo */
+      }
+      
+      .together {
+        color: black; /* Negro */
+      }
+      /* Ajustes en la ventana emergente */
+.modal-contenido {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;  /* Apilamos el contenido y los botones */
+  padding: 15px;
+  gap: 10px;
+  max-height: 90vh;  /* Limita la altura del modal */
+  justify-content: space-between; /* Asegura que los botones estén al final */
+}
+
+/* Panel con scroll dentro del modal */
+.modal-info {
+  flex: 1;
+  overflow-y: auto;        /* Activa el scroll vertical */
+  max-height: 60vh;         /* Limita la altura máxima para evitar desbordamiento */
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+/* Botones de acción dentro del modal */
+.modal-botones {
+  display: flex;
+  flex-direction: row; /* Apilamos los botones */
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-cerrar,
+.btn-cerrar-agregar {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.btn-cerrar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-cerrar-agregar {
+  background-color: #e1e73c;
+  color: white;
+}
+
+/* Aseguramos que la ventana emergente no se desborde en pantallas pequeñas */
+@media (max-width: 600px) {
+  .modal-contenido {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .modal-info {
+    max-height: 45vh; /* Ajustamos la altura del panel con scroll para pantallas pequeñas */
+  }
+
+  .btn-cerrar,
+  .btn-cerrar-agregar {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+      
+}

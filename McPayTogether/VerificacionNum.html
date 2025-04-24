@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="verificacionApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="CARPETACSS/VerificacionNumEstilos.css" />
+  <title>Verificación</title>
+</head>
+<body ng-controller="VerificacionCtrl">
+
+  <div class="header">
+    <span class="back" ng-click="regresar()">&lt;</span>
+  </div>
+
+  <h2>Continuar con teléfono</h2>
+
+  <p class="instruccion">
+    Ingresa el código de 6 dígitos que enviamos al número {{ telefono }}
+  </p>
+
+  <div class="codigo-input">
+    <input type="text" maxlength="1" ng-repeat="i in [1,2,3,4,5,6]" />
+  </div>
+
+  <p class="contador" ng-if="!reenviable">
+    ¿No recibiste el código? Solicita otro en <strong>{{ segundos }}</strong> segundos.
+  </p>
+  <p class="contador" ng-if="reenviable">
+    ¿No recibiste el código? <span class="reenviar" ng-click="reenviarCodigo()">Reenviar</span>
+  </p>
+  
+  <div class="botones">
+    <button class="btn amarillo" ng-click="registrarse()">Registrarse</button>
+    <button class="btn blanco" ng-click="regresar()">Regresar</button>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/VerificacionNumMain.js"></script>
+</body>
+</html>

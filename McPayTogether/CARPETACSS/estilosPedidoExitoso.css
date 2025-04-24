@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #bbb;
+  border-radius: 30px;
+  padding: 5px 10px;
+  background-color: #fff;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  flex-grow: 1;
+  padding: 5px;
+}
+
+.icon {
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.top-icons {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.main-content {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-message {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.mc-logo {
+  width: 400px;  /* Aumentado */
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.survey-box {
+  background-color: #fbbd08;
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  max-width: 90%;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skip-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #111;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Responsive para celulares */
+@media (max-width: 480px) {
+  .top-bar {
+    flex-direction: row;
+  }
+
+  .search-box {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .success-message {
+    font-size: 20px;
+  }
+
+  .survey-box {
+    font-size: 15px;
+    padding: 14px 20px;
+  }
+
+  .mc-logo {
+    width: 160px; /* Asegura buen tamaño en móviles también */
+  }
+}

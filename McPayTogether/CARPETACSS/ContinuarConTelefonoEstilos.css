@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    padding-bottom: 120px; /* espacio para no tapar contenido */
+    background: #fff;
+    color: #333;
+  }
+  
+  /* Header */
+  .header-telefono {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .flecha {
+    position: absolute;
+    left: 0;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .titulo {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 29px;
+  }
+  
+  /* Input personalizado */
+  .contenedor-input {
+    margin-bottom: 40px;
+  }
+  .contenedor-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10%;
+  }
+  .contenedor-input input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #fbbd08; /* amarillo McDonald's */
+    font-size: 16px;
+    padding: 8px 4px;
+    outline: none;
+  }
+  
+  /* Botones */
+  .botones {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff; /* fondo blanco para no superponer */
+  }
+  .btn {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    
+  }
+  .amarillo {
+    background: #fbbd08;
+    color: #000;
+  }
+  .blanco {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+  .continuar-telefono{
+    margin-bottom: 10%;
+    margin-top: 25%;
+  }

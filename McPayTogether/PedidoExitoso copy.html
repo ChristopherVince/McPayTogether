@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Exitoso</title>
+  <link rel="stylesheet" href="CARPETACSS/estilosPedidoExitoso.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script defer src="CARPETAJS/mainPedidoExitoso.js"></script>
+</head>
+<body ng-controller="MenuCtrl">
+
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Search">
+      <span class="icon">🔍</span>
+    </div>
+    <div class="top-icons">
+      <span class="icon">📷</span>
+      <span class="icon" ng-click="toggleMenu()">☰</span>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h2 class="success-message">Pedido exitoso</h2>
+    <img src="CARPETAIMAGENES/logo_mc.png" alt="Logo McDonald's" class="mc-logo">
+
+    <!-- "Realice..." como botón -->
+    <div class="survey-box" ng-click="responderEncuesta()">
+      Realice una breve encuesta por recompensas..
+    </div>
+
+    <!-- "Ahora no" -->
+    <div class="skip-text" ng-click="skipSurvey()">ahora no</div>
+  </div>
+
+</body>
+</html>

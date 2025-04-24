@@ -1,0 +1,146 @@
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* Header */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 2px solid #ddd;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.mcpay {
+  color: #ffc107;
+}
+.together {
+  color: black;
+}
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Billetes + Mastercard */
+.extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+}
+.billetes {
+  width: 80px;
+}
+.mastercard {
+  width: 60px;
+}
+
+/* Tarjeta */
+.tarjeta-container {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.tarjeta-visual {
+  background: linear-gradient(135deg, #ffd700, #ff6347);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.numero-vis {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.nombre-vis {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.fecha-cvv-vis {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.cvv-vis {
+  margin-left: 40px;
+}
+
+/* Formulario */
+.formulario-tarjeta label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+.formulario-tarjeta input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Fecha y CVV */
+.fecha-cvv {
+  display: flex;
+  gap: 12px; /* espacio entre columnas */
+  margin-top: 15px;
+}
+
+.fecha-cvv .field {
+  flex: 1; /* cada columna ocupa la misma anchura */
+  display: flex;
+  flex-direction: column;
+}
+
+.fecha-cvv .field input {
+  width: 100%; /* rellena toda la columna */
+  box-sizing: border-box;
+}
+
+/* Estilo para el botón de confirmación */
+.button-confirmar {
+  background-color: #ffc107; /* Color amarillo */
+  color: black; /* Letras en color negro */
+  padding: 15px 30px; /* Espaciado interno */
+  font-size: 18px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-weight: bold; /* Negrita */
+  display: block; /* Para que el botón sea un bloque */
+  margin: 20px auto; /* Centrado del botón */
+  text-align: center; /* Asegura que el texto esté centrado dentro del botón */
+  width: 200px; /* Ancho fijo para el botón */
+}
+
+.button-confirmar:hover {
+  background-color: #ffcc00; /* Amarillo más brillante al pasar el mouse */
+}
+
+.button-confirmar:active {
+  background-color: #e6b800; /* Color más oscuro cuando el botón es presionado */
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="mcPayApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McPayTogether-Invita a tu Grupo</title>
+  <link rel="stylesheet" href="CARPETACSS/Paso3QrEstilos.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MainController">
+
+  <header class="header">
+    <h1><span class="mc-yellow">McPay</span><span class="mc-black">Together</span></h1>
+    <button class="menu-button">&#9776;</button>
+  </header>
+
+  <section class="paso">
+    <div class="progress-container">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <path class="circle"
+          stroke-dasharray="100, 100"
+          d="M18 2.0845
+             a 15.9155 15.9155 0 0 1 0 31.831
+             a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <text x="18" y="20.35" class="percentage">3 de 3</text>
+      </svg>
+      <div class="progress-text">
+        <p><strong>Invita a tu grupo</strong></p>
+        <p>Enviar el QR o enlace de invitación a tu grupo para que se unan a tu carrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <img src="CARPETAIMAGENES/randomqr.png" alt="Código QR" class="qr-image" />
+
+    <div class="url-box">
+      <input type="text" id="linkInput" value="https://www.mcdonals.com/McpayTogether/sjbU4W9U" readonly />
+      <button onclick="copyToClipboard()">📋</button>
+    </div>
+
+    <div class="social-icons">
+      <button onclick="compartir('whatsapp')" class="icon-button">
+        <img src="CARPETAIMAGENES/whatsapp.png" alt="WhatsApp" />
+      </button>
+      <button onclick="compartir('telegram')" class="icon-button">
+        <img src="CARPETAIMAGENES/telegram.png" alt="Telegram" />
+      </button>
+      <button onclick="compartir('messenger')" class="icon-button">
+        <img src="CARPETAIMAGENES/messenger.png" alt="Messenger" />
+      </button>
+      <button onclick="compartir('instagram')" class="icon-button">
+        <img src="CARPETAIMAGENES/instagram.png" alt="Instagram" />
+      </button>
+    </div>
+
+    <!-- Botón de continuar -->
+     
+    <button class="menu-button-big" onclick="continuar()">CONTINUAR</button>
+  </main>
+
+  <script src="CARPETAJS/Paso3QrMain.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McPayTogether – Paso 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="CARPETACSS/Paso1CarroEstilo.css">
+  </head>
+  <body ng-controller="FormularioCtrl">
+
+    <!-- HEADER -->
+    <header class="header-bar">
+      <div class="logo">
+        <span class="mcpay">McPay</span><span class="together">Together</span>
+      </div>
+      <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+    </header>
+
+    <!-- STEP INFO -->
+    <div class="step-info">
+      <div class="circle-progress">
+        <svg class="progress-ring" width="60" height="60">
+          <circle class="bg" cx="30" cy="30" r="24" stroke-width="6" />
+          <circle class="progress" cx="30" cy="30" r="24" stroke-width="6" />
+        </svg>
+        <span class="circle-text">1 de 3</span>
+      </div>
+      <div class="step-text">
+        <strong>Personaliza tu carrito</strong><br>
+        <small>Elige cómo quieres que funcione el pedido grupal</small>
+      </div>
+    </div>
+
+    <!-- FORM FIELDS -->
+    <div class="campo" ng-repeat="campo in campos">
+      <label>{{ campo.label }}</label>
+      <input
+        type="text"
+        ng-model="campo.texto"
+        ng-focus="campo.mostrar = true"
+        ng-blur="ocultar(campo)"
+        placeholder="Escribe o selecciona"
+      />
+      <ul class="dropdown" ng-show="campo.mostrar">
+        <li
+          ng-repeat="opcion in campo.opciones | filter:campo.texto"
+          ng-click="seleccionar(campo, opcion)"
+        >
+          {{ opcion }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- CONTINUE BUTTON -->
+    <button class="boton-continuar" ng-click="continuarPg()" ng-disabled="!checkContinuar()">Continuar</button>
+
+    <script src="CARPETAJS/Paso1CarroApp.js"></script>
+  </body>
+</html>

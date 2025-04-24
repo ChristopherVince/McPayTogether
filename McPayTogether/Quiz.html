@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="quizApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>McQuiz</title>
+  <link rel="stylesheet" href="CARPETACSS/QuizEstilos.css">
+</head>
+<body ng-controller="QuizController">
+
+  <header class="header-bar">
+    <span class="icon menu-icon" ng-click="toggleMenu()" role="button" aria-label="Abrir menú">☰</span>
+</header>
+
+
+  <div class="quiz-container" ng-if="preguntaActual">
+    <div class="pregunta-tipo">{{ tipoPreguntaActual }}</div>
+    <div class="pregunta-texto">{{ preguntaActual.texto }}</div>
+
+    <div class="opciones">
+      <button ng-repeat="opcion in preguntaActual.opciones"
+              ng-click="responder(opcion)">
+        {{ opcion }}
+      </button>
+    </div>
+  </div>
+
+  <div class="fin" ng-if="finalizado">
+    <h2>¡Felicidades, completaste el quiz!</h2>
+  
+    <p>
+      Obtuviste 
+      <strong>{{ calcularPuntos() }}</strong> 
+      puntos de descuento McDonald's en tu siguiente compra.
+    </p>
+  
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Gracias" class="imagen-final">
+  
+    <p>Gracias por participar</p>
+    <button class="btn-salir" ng-click="salir()">Salir</button>
+
+  </div>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/QuizMain.js"></script>
+</body>
+</html>

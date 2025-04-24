@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="persoApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personaliza tu Menú</title>
+  <link rel="stylesheet" href="CARPETACSS/PersoCarroPaso2estilos.css" />
+</head>
+<body ng-controller="PersoCtrl">
+
+  <header class="header">
+    <h1>
+      <span class="mc-pay">McPay</span><span class="together">Together</span>
+    </h1>
+    <button class="menu-icon">&#9776;</button>
+  </header>
+
+  <section class="paso">
+    <div class="circle-progress">
+      <svg class="progress-ring" width="60" height="60">
+        <circle class="bg" cx="30" cy="30" r="24" stroke-width="6" />
+        <circle class="progress" cx="30" cy="30" r="24" stroke-width="6" />
+      </svg>
+      <span class="circle-text">2 de 3</span>
+    </div>
+    <div>
+      <h2>Personaliza tu menú <span class="opcional">(Opcional)</span></h2>
+      <p class="descripcion">Responde las siguientes preguntas si deseas que personalicemos las opciones de tu menú</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="pregunta">
+      <h3>¿Cómo te sientes hoy?</h3>
+      <div class="opciones opciones1">
+        <button class="emoji-btn" ng-click="respuesta1 = 'Feliz'">😊<span>Feliz</span></button>
+        <button class="emoji-btn" ng-click="respuesta1 = 'Con hambre'">😋<span>Con hambre</span></button>
+        <button class="emoji-btn" ng-click="respuesta1 = 'Cansado'">🥱<span>Cansado</span></button>
+        <button class="emoji-btn" ng-click="respuesta1 = 'Ligero'">😌<span>Ligero</span></button>
+        <button class="emoji-btn" ng-click="respuesta1 = 'Experimental'">😝<span>Experimental</span></button>
+      </div>
+    </div>
+
+    <div class="pregunta">
+      <h3>¿Qué rol tienes en el grupo?</h3>
+      <div class="opciones opciones2">
+        <button class="emoji-btn" ng-click="respuesta2 = 'Padre'">👨<span>Padre</span></button>
+        <button class="emoji-btn" ng-click="respuesta2 = 'Madre'">👩<span>Madre</span></button>
+        <button class="emoji-btn" ng-click="respuesta2 = 'Hijo(a)'">👧<span>Hijo(a)</span></button>
+        <button class="emoji-btn" ng-click="respuesta2 = 'Amigo(a)'">👥<span>Amigo(a)</span></button>
+        <button class="emoji-btn" ng-click="respuesta2 = 'Pareja'">🧑‍🤝‍🧑<span>Pareja</span></button>
+        <button class="emoji-btn" ng-click="respuesta2 = 'Otro'">🧍<span>Otro</span></button>
+      </div>
+    </div>
+
+    <div class="pregunta">
+      <h3>¿Qué tipo de comida prefieres hoy?</h3>
+      <div class="opciones opciones3">
+        <button class="emoji-btn" ng-click="respuesta3 = 'Dulce'">🍦<span>Dulce</span></button>
+        <button class="emoji-btn" ng-click="respuesta3 = 'Ligero'">🥗<span>Ligero</span></button>
+        <button class="emoji-btn" ng-click="respuesta3 = 'Contundente'">🍔<span>Contundente</span></button>
+        <button class="emoji-btn" ng-click="respuesta3 = 'Saludable'">🍎<span>Saludable</span></button>
+        <button class="emoji-btn" ng-click="respuesta3 = 'Rápido'">🍟<span>Rápido</span></button>
+      </div>
+    </div>
+
+    <button class="continuar-btn" ng-click="continuarPg()" ng-disabled="!checkContinuar()">Continuar</button>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/PersoCarroPaso2main.js"></script>
+</body>
+</html>

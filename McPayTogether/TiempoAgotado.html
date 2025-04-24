@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McPay Together</title>
+  <link rel="stylesheet" href="CARPETACSS/TiempoAgotadoEstilos.css">
+</head>
+<body ng-app="menuApp" ng-controller="MenuController">
+  <!-- Header -->
+  <header class="header-bar">
+    <div class="logo">
+      <span class="mcpay">McPay</span><span class="together">Together</span>
+    </div>
+    <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+  </header>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Buscar...">
+    </div>
+    <div class="icons">
+      <div class="menu-icon" ng-click="toggleMenu()">🔲</div>
+      <div class="menu-carrito" ng-click="toggleCarrito()">🛒</div>
+    </div>
+  </div>
+
+  <!-- Contenido al agotarse el tiempo -->
+  <div class="agotado-container">
+    <img src="CARPETAIMAGENES/Reloj.webp" alt="Reloj" class="agotado-img">
+    <h2 class="agotado-texto">¡El tiempo se ha agotado!</h2>
+    <p class="agotado-subtexto">¿Qué deseas realizar?</p>
+
+    <button class="btn amarillo">Pagar todo</button>
+    <button class="btn gris">Reformular pedido</button>
+  </div>
+</body>
+</html>

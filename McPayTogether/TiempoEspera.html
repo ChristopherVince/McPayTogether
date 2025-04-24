@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp" ng-controller="MenuController">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McPayTogether - Pedido</title>
+  <link rel="stylesheet" href="CARPETACSS/TiempoEsperaEstilos.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/TiempoEspera.js"></script>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <header class="header-bar">
+    <div class="logo">
+      <span class="mcpay">McPay</span><span class="together">Together</span>
+    </div>
+    <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+  </header>
+
+  <!-- Barra búsqueda + QR + carrito -->
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Buscar...">
+    </div>
+    <div class="icons">
+      <div class="menu-icon" ng-click="toggleMenu()">🔲</div>
+      <div class="menu-carrito" ng-click="toggleCarrito()">🛒</div>
+    </div>
+  </div>
+
+  <!-- Contenido: imagen, tiempo y mensaje -->
+  <div class="contador-container">
+    <img src="CARPETAIMAGENES/Hamburguesa.png" alt="Hamburguesa" class="burger-img">
+    <div id="tiempo-label" class="title">Tiempo restante</div>
+    <div id="contador" class="time">01:45</div>
+    <div id="mensaje" class="message">Tu pedido se reservará por el tiempo indicado</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

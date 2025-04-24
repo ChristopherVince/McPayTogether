@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp" ng-controller="MenuController">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos McDonald's</title>
+  <link rel="stylesheet" href="CARPETACSS/CarritoCompartido.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <header class="header-bar">
+    <div class="logo">
+      <span class="mcpay">McPay</span><span class="together">Together</span>
+    </div>
+    <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+  </header>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Buscar..." />
+    </div>
+    <div class="icons">
+      <div class="menu-icon" ng-click="toggleQR()">🔲</div>
+      <div class="menu-carrito" ng-click="toggleCarrito()">🛒</div>
+    </div>
+  </div>
+
+  <!-- Contenido principal con scroll -->
+  <div class="contenido-scroll">
+
+    <!-- Pedido del usuario -->
+    <div class="card" ng-if="pedidoHost.productos.length">
+      <h2>Mi pedido:</h2>
+      <div class="pedido">
+        <div class="avatar"></div>
+        <div class="info">
+          <strong>{{ pedidoHost.cliente }}</strong>
+          <div class="producto" ng-repeat="prod in pedidoHost.productos">
+            <div class="detalle">
+              <span class="nombre">{{ prod.nombre }}</span>
+              <span class="precio-uni">(${{ prod.precio | number:2 }})</span>
+            </div>
+            <div class="detalle">
+              <button class="add" ng-click="cambiarCantidadHost($index,1)">+</button>
+              <span class="cantidad">{{ prod.cantidad }}</span>
+              <button class="remove" ng-click="cambiarCantidadHost($index,-1)">-</button>
+              <button class="delete" ng-click="borrarHost($index)">Eliminar</button>
+            </div>
+            <div class="subtotal-item">
+              Subtotal: <strong>${{ prod.precio * prod.cantidad | number:2 }}</strong>
+            </div>
+          </div>
+          <p class="total"><strong>Total: ${{ pedidoHost.total | number:2 }}</strong></p>
+        </div>
+      </div>
+      <div class="botones-pago">
+        <button class="boton" ng-click="seleccionarPago('efectivo')" ng-class="{activo: metodoPago==='efectivo'}">Efectivo</button>
+        <button class="boton" ng-click="seleccionarPago('tarjeta')" ng-class="{activo: metodoPago==='tarjeta'}">Tarjeta</button>
+      </div>
+      <button class="pago-btn" ng-click="continuarMiPago()">Continuar con mi pago</button>
+    </div>
+
+    <!-- Pedidos del grupo -->
+    <div class="card" ng-if="pedidos.length">
+      <h2>Pedido del grupo:</h2>
+      <div class="pedido" ng-repeat="pedido in pedidos | filter:searchQuery">
+        <div class="avatar"></div>
+        <div class="info">
+          <strong>{{ pedido.cliente }}</strong>
+          <div class="producto" ng-repeat="prod in pedido.productos">
+            <div class="detalle">
+              <span class="nombre">{{ prod.nombre }}</span>
+              <span class="precio-uni">(${{ prod.precio | number:2 }})</span>
+            </div>
+            <div class="detalle">
+              <button class="add" ng-click="cambiarCantidadGrupo(pedido,$index,1)">+</button>
+              <span class="cantidad">{{ prod.cantidad }}</span>
+              <button class="remove" ng-click="cambiarCantidadGrupo(pedido,$index,-1)">-</button>
+              <button class="delete" ng-click="borrarProductoGrupo(pedido,$index)">Eliminar</button>
+            </div>
+            <div class="subtotal-item">
+              Subtotal: <strong>${{ prod.precio * prod.cantidad | number:2 }}</strong>
+            </div>
+          </div>
+          <p class="total"><strong>Total: ${{ pedido.total | number:2 }}</strong></p>
+        </div>
+      </div>
+      <div class="total-general"><strong>Total general: ${{ getTotalGeneral() | number:2 }}</strong></div>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/CarritoCompartido.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McPayTogether - Tarjeta</title>
+  <link rel="stylesheet" href="CARPETACSS/AgregarTarjeta.css" />
+</head>
+<body>
+  <header class="header-bar">
+    <div class="logo">
+      <span class="mcpay">McPay</span><span class="together">Together</span>
+    </div>
+    <div class="icons">
+      <div class="menu-icon">🔲</div>
+      <div class="menu-carrito">🛒</div>
+    </div>
+  </header>
+
+  <section class="extras">
+    <img src="CARPETAIMAGENES\BILLETES.png" alt="Billetes" class="billetes" />
+    <img src="CARPETAIMAGENES\logo-Mastercard.png" alt="Mastercard" class="mastercard" />
+  </section>
+
+  <section class="tarjeta-container">
+    <div class="tarjeta-visual">
+      <div id="numero-vis" class="numero-vis">XXXX XXXX XXXX XXXX</div>
+      <div id="nombre-vis" class="nombre-vis">NOMBRE APELLIDO</div>
+      <div class="fecha-cvv-vis">
+        <span id="mes-vis">MM</span>/<span id="anio-vis">YY</span>
+        <span id="cvv-vis" class="cvv-vis">XXX</span>
+      </div>
+    </div>
+    <form class="formulario-tarjeta">
+      <label>Clave Única por local</label>
+      <input type="text" />
+
+      <label>Nombre en la tarjeta</label>
+      <input type="text" id="nombre-input"
+             oninput="actualizarNombre(this.value)" />
+
+      <label>Número de tarjeta</label>
+      <input type="text" maxlength="16" id="numero-input"
+             oninput="actualizarNumero(this.value)" />
+
+             <div class="fecha-cvv">
+                <div class="field">
+                  <label>Mes</label>
+                  <input type="text" maxlength="2" id="mes-input" placeholder="MM" oninput="actualizarFecha()" />
+                </div>
+                <div class="field">
+                  <label>Año</label>
+                  <input type="text" maxlength="2" id="anio-input" placeholder="YY" oninput="actualizarFecha()" />
+                </div>
+                <div class="field">
+                  <label>CVV</label>
+                  <input type="text" maxlength="3" id="cvv-input" oninput="actualizarCVV(this.value)" />
+                </div>
+              </div>
+              
+    </form>
+  </section>
+
+  <script src="CARPETAJS\AgregarTarjeta.js"></script>
+</body>
+</html>

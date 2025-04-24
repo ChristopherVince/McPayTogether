@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="telefonoApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuar con teléfono</title>
+  <link rel="stylesheet" href="CARPETACSS/ContinuarConTelefonoEstilos.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="CARPETAJS/ContinuarConTelefonoMain.js"></script>
+</head>
+<body ng-controller="TelefonoCtrl">
+
+  <!-- Header con flechita y título -->
+  <div class="header-telefono">
+    <span class="flecha" ng-click="regresar()">&lt;</span>
+    
+  </div>
+  <div class="continuar-telefono">
+    <h2 class="titulo">Continuar con teléfono</h2>
+  </div>
+
+  <!-- Input para número -->
+  <div class="contenedor-input">
+    <label for="telefono">Ingresa el numero de telefono con el que estas registrado</label>
+    <input type="tel" id="telefono" ng-model="numero" placeholder="Telefono">
+  </div>
+
+  <!-- Botones -->
+  <div class="botones">
+    <button class="btn amarillo" ng-click="continuar()">Continuar</button>
+    <button class="btn blanco" ng-click="regresar()">Regresar</button>
+  </div>
+
+</body>
+</html>

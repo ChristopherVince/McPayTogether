@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .mc-yellow {
+    color: #ffc72c;
+  }
+  
+  .mc-black {
+    color: #000;
+  }
+  
+  .menu-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Sección de progreso */
+  .paso {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .circular-chart {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke: #db0007;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    stroke-dasharray: 100, 100;
+  }
+  
+  .percentage {
+    fill: #000;
+    font-size: 6px;
+    text-anchor: middle;
+  }
+  
+  .progress-text {
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .progress-text p:first-child {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .main-content {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .qr-image {
+    width: 65%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  }
+  
+  .url-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .url-box input {
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .url-box button {
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #ffc72c;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .icon-button img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .icon-button:hover,
+  .icon-button:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    outline: none;
+  }
+  
+  .menu-button-big {
+    background-color: #ffc72c;
+    color: #000;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }

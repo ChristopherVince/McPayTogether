@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="reciboApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recibo McPedidos</title>
+  <link rel="stylesheet" href="CARPETACSS/ReciboEstilos.css">
+</head>
+<body ng-controller="ReciboController">
+
+    <header class="header-bar">
+        <div class="logo">
+            <span class="mcpay">McPay</span><span class="together">Together</span>
+        </div>
+        <span class="icon menu-icon" ng-click="toggleMenu()" role="button" aria-label="Abrir menú">☰</span>
+    </header>
+
+    <div class="top-bar">
+        <div class="search-box">
+            <input type="text" ng-model="searchQuery" placeholder="Buscar...">
+        </div>
+        <div class="icons">
+            <div class="menu-icon" ng-click="toggleMenu()" role="button" aria-label="Ver QR">
+                <img src="CARPETAIMAGENES/qrMini.jpeg" alt="Código QR">
+            </div>
+            <div class="menu-carrito" ng-click="toggleMenu()" role="button" aria-label="Carrito de compras">🛒</div>
+        </div>
+    </div>
+
+    <p> Codigo Sucursal: <strong>#7lF2s352e37</strong></p>
+
+  <div class="recibo-container">
+    <div class="usuario" ng-repeat="usuario in usuarios">
+      <div class="fila-principal" ng-click="usuario.expandido = !usuario.expandido">
+        <div class="columna producto">{{ usuario.productos[0].nombre }}</div>
+        <div class="columna cantidad">{{ totalCantidad(usuario.productos) }}</div>
+        <div class="columna precio">
+          ${{ totalPrecio(usuario.productos) }}
+          <span class="flecha">{{ usuario.expandido ? '▲' : '▼' }}</span>
+        </div>
+      </div>
+
+      <div class="detalles" ng-show="usuario.expandido">
+        <div class="detalle-producto" ng-repeat="producto in usuario.productos">
+          <span>{{ producto.nombre }}</span>
+          <span>x{{ producto.cantidad }}</span>
+          <span>${{ producto.precio }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="resumen-final">
+    <div class="resumen-linea">
+      <span>Sub total sin IVA: </span>
+      <span>${{ subtotalSinIVA() }}</span>
+    </div>
+    <div class="resumen-linea">
+      <span>IVA (16%): </span>
+      <span>${{ calcularIVA() }}</span>
+    </div>
+    <div class="resumen-linea total">
+      <span>Cantidad total: </span>
+      <span>${{ cantidadTotalConIVA() }}</span>
+    </div>
+  </div>
+  <button class="boton-final" ng-click="accionFinal()">Finalizar</button>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="CARPETAJS/ReciboMain.js"></script>
+</body>
+</html>

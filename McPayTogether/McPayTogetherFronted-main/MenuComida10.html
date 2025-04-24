@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp" ng-controller="MenuController">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menú McDonald's</title>
+        <link rel="stylesheet" href="CARPETACSS\MenuComida10.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="CARPETAJS\MenuComida.js"></script>
+      </head>
+      <header class="header-bar">
+        <div class="logo">
+          <span class="mcpay">McPay</span><span class="together">Together</span>
+        </div>
+        
+        <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+      </header>
+      
+<body>
+
+    <div class="top-bar">
+        <div class="search-box">
+          <input type="text" ng-model="searchQuery" placeholder="Search">
+        </div>
+        <div class="icons">
+          <div class="menu-icon" ng-click="toggleMeno()">🔲</div>
+          <div class="menu-carrito" ng-click="toggleMenu()">🛒</div>
+        </div>
+      </div>
+
+
+  <div class="menu-header">
+    <span ng-click="mostrar('recomendacion')" ng-class="{ activo: seccionActual === 'recomendacion' }">Recomendación</span>
+    <span ng-click="mostrar('completo')" ng-class="{ activo: seccionActual === 'completo' }">Menú completo</span>
+  </div>
+
+  <div class="menu-contenido">
+    <div class="platillo" ng-repeat="item in menu[seccionActual]" ng-click="abrirModal(item)">
+
+      <div class="imagen-contenedor">
+        <img ng-src="{{item.imagen}}" alt="{{item.nombre}}" />
+      </div>
+      <div class="info-platillo">
+        {{item.nombre}} - <strong>${{item.precio}}</strong>
+      </div>
+    </div>
+  </div>
+ 
+<!-- Modal emergente -->
+<div class="modal" ng-show="modalAbierto">
+  <div class="modal-contenido">
+
+    <!-- Imagen y detalles -->
+    <div class="modal-imagen">
+      <img ng-src="{{platilloSeleccionado.imagen}}" alt="Platillo">
+    </div>
+    <div class="modal-detalles">
+      <h2>{{platilloSeleccionado.nombre}}</h2>
+      <p><strong>${{platilloSeleccionado.precio}}</strong></p>
+    </div>
+
+    <!-- Opciones con scroll -->
+    <div class="modal-info">
+      <p class="seccion-titulo">Elige tus condimentos:</p>
+      <div class="opciones">
+        <div class="opcion" ng-repeat="condimento in condimentos">
+          <span>{{condimento}}</span>
+          <input type="checkbox" ng-model="condimentosSeleccionados[condimento]">
+        </div>
+      </div>
+
+      <p class="seccion-titulo">¿Deseas agregar un ingrediente extra?</p>
+      <div class="opciones">
+        <div class="opcion" ng-repeat="extra in extras">
+          <span>{{extra}}</span>
+          <input type="checkbox" ng-model="extrasSeleccionados[extra]">
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTONES AQUÍ -->
+    <div class="modal-botones">
+      <button class="btn-cerrar" ng-click="cerrarModal()">Cerrar</button>
+      <button class="btn-cerrar-agregar" ng-click="cerrarModal()">Agregar al pedido</button>
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>

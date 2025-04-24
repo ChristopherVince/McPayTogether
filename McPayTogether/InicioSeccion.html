@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="loginApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>McPayTogether - Login</title>
+  <link rel="stylesheet" href="CARPETACSS/estilosInicioSeccion.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="CARPETAJS/estilosInicioSeccion.js"></script>
+
+  <!-- Incluir Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body ng-controller="LoginCtrl">
+
+  <!-- Encabezado con logo y emojis -->
+  <header class="header-login">
+    <h1 class="logo">McPayTogether</h1>
+    <div class="iconos-menu">
+      <span>🍟</span>
+      <span>🍔</span>
+      <span>🥤</span>
+      <span>🍟</span>
+      <span>🍔</span>
+    </div>
+  </header>
+
+  <!-- Texto de bienvenida -->
+  <section class="bienvenida">
+    <h2 class="hdos">Te damos la bienvenida a</h2>
+    <h2 class="hdos">McDonald's</h2>
+  </section>
+
+  <p class="aparte">Y disfruta la experiencia</p>
+
+  <!-- Botones de login -->
+  <section class="login-buttons">
+
+    <!-- Nueva opción "Continuar como visitante" -->
+    <button class="btn-login" ng-click="ContinuarConTelefono()">
+      <i class="fas fa-phone-alt icono"></i> Continuar con Teléfono
+    </button>
+    <button class="btn-login" ng-click="login('facebook')">
+      <i class="fab fa-facebook icono"></i> Continuar con Facebook
+    </button>
+    <button class="btn-login" ng-click="login('google')">
+      <i class="fab fa-google icono"></i> Continuar con Google
+    </button>
+    <button class="btn-login" ng-click="login('apple')">
+      <i class="fab fa-apple icono"></i> Continuar con Apple
+    </button>
+    <button class="btn-login" ng-click="login('email')">
+      <i class="fas fa-envelope icono"></i> Continuar con Correo Electrónico
+    </button>
+    <!-- Nueva opción "Continuar como visitante" -->
+    <button class="btn-login" ng-click="continuarComoVisitante()">
+      <i class="fas fa-user icono"></i> Continuar como visitante
+    </button>    
+  </section>
+</body>
+</html>
